@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+````
+require 'slash7'
+client = Slash7::Client.new('[YOUR TRACKING CODE]')
+# Build your own event
+# See https://p-lucky.atlassian.net/wiki/display/PUB/Event+log+format for the format.
+event = {
+  '_event_name' => 'attack',
+  '_app_user_id' => 'user100123',
+  '_event_params' => {'weapon' => 'long sword'},
+  'lv' => 21
+}
+client.send_data(event)
+````
 
 ## Contributing
 
